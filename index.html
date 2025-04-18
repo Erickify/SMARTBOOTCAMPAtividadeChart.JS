@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<style>
+    .container {
+        /* height: 100%;
+        width: 100%; */
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+    }
+
+    .graficos {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+    }
+</style>
+
+<body>
+
+    <div class="container">
+
+        <div class="graficos">
+
+            <canvas id="graficoLinhas"></canvas>
+        
+          </div>
+
+        <div class="graficos">
+            
+          <canvas id="graficoBarras&Barras"></canvas>
+        
+        </div>
+
+    </div>
+
+
+
+
+  </body>
+
+</html>
+
+<script>
+    
+    const linhas = document.getElementById('graficoLinhas');
+    const barras = document.getElementById('graficoBarras&Barras');
+
+    //Linhas
+
+    new Chart(linhas, {
+        type: 'line',
+        data: {
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+            datasets: [{
+                label: 'Temperatura',
+                data: [17, 20, 13, 22, 33, 15],
+                backgroundColor: 'rgb(255 99 132)',
+                borderColor: 'rgb(255 99 132)',
+            }, {
+                label: 'Umidade',
+                data: [79, 76, 88, 83, 84, 73],
+                backgroundColor: 'rgb(54 162 235)',
+                borderColor: 'rgb(54 162 235)',
+
+            }]
+        }
+    });
+
+    //Barras e Barras
+
+    new Chart(barras, {
+
+        type: 'bar',
+        
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets: [{
+                label: 'Temperatura Média',
+                data: [13, 20, 19, 15, 20, 24],
+                backgroundColor: 'rgb(255 99 132)',
+        
+            }, {
+                label: 'Umidade Média',
+                data: [85, 82, 87, 90, 77, 79],
+                backgroundColor: 'rgb(54 162 235)',
+          
+
+
+            }]
+        }
+    });
+
+</script>
